@@ -1,0 +1,57 @@
+name: UltimateCore
+version: 1.0.0
+main: dev.ultimate.Main
+api-version: '1.21'
+description: Trade, protected areas, warps, land claims, emotes, arena and kits
+commands:
+  trade:
+    description: Trade items safely with another player
+    usage: /trade <player> | accept | deny
+  area:
+    description: Protected areas (admin)
+    usage: /area axe | create <name> | <name> edit | delete <name> | list
+  warp:
+    description: Warp to a saved place
+    usage: /warp <name> | add <name> | del <name> | list
+  claim:
+    description: Land claims
+    usage: /claim tool | create | delete | trust | untrust | list | info | points
+  sit:
+    description: Sit down
+    usage: /sit
+  spin:
+    description: Spin around
+    usage: /spin [player]
+  dap:
+    description: Dap up a player
+    usage: /dap <player>
+  hug:
+    description: Hug a player
+    usage: /hug <player>
+  wave:
+    description: Wave at a player
+    usage: /wave <player>
+  highfive:
+    description: High five a player
+    usage: /highfive <player>
+  arena:
+    description: PvP arena
+    usage: /arena join [arena] [kit] | leave | list
+  kit:
+    description: Arena kits
+    usage: /kit <name> | list | edit <name> | create <name> | delete <name>
+permissions:
+  ultimate.owner:
+    default: op
+  ultimate.area.admin:
+    default: op
+  ultimate.area.bypass:
+    default: op
+  ultimate.claim.admin:
+    default: op
+  ultimate.warp.admin:
+    default: op
+  ultimate.arena.admin:
+    default: op
+  ultimate.emote.others:
+    default: op

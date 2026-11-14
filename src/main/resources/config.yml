@@ -1,0 +1,9 @@
+claims:
+  start-blocks: 777        # every new player gets this many claim blocks
+  blocks-per-minute: 2     # online time reward (1 minute = 2 blocks)
+  min-size: 5              # smallest claim side length
+
+arena:
+  default-kit: sword
+  # commands players may use while inside the arena
+  allowed-commands: [arena, kit, msg, tell, r, w]
