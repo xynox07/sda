@@ -1,8 +1,8 @@
-name: UltimateCore
-version: 1.0.0
-main: dev.ultimate.Main
+name: DarlooPolice
+version: 1.5.0
+main: dev.darloo.Main
 api-version: '1.21'
-description: Trade, protected areas, warps, land claims, emotes, arena and kits
+description: DarlooPolice - punish/jail, shop, tpa, lag tools, trade, areas, warps, land claims, emotes, arena and kits
 commands:
   trade:
     description: Trade items safely with another player
@@ -36,11 +36,98 @@ commands:
     usage: /highfive <player>
   arena:
     description: PvP arena
-    usage: /arena join [arena] [kit] | leave | list
+    usage: /arena join [kit] | modes | leave | list | create <name>
   kit:
     description: Arena kits
-    usage: /kit <name> | list | edit <name> | create <name> | delete <name>
+    usage: /kit <name> | list | edit [name] | create <name> | delete <name>
+  punish:
+    description: Punish a player and send them to jail
+    usage: /punish <player> <minutes> [reason]
+  unpunish:
+    description: Free a punished player early
+    usage: /unpunish <player>
+  jail:
+    description: Set or remove the jail cell
+    usage: /jail set | del | list
+  shop:
+    description: Open the shop
+    usage: /shop [category] | /shop edit
+  tpa:
+    description: Ask to teleport to a player
+    usage: /tpa <player>
+  tpahere:
+    description: Ask a player to teleport to you
+    usage: /tpahere <player>
+  tpaccept:
+    description: Accept a teleport request
+    usage: /tpaccept [player]
+    aliases: [tpyes]
+  tpdeny:
+    description: Deny a teleport request
+    usage: /tpdeny [player]
+    aliases: [tpno]
+  tpcancel:
+    description: Cancel your teleport request
+    usage: /tpcancel
+  clearlag:
+    description: Remove dropped items and extra mobs
+    usage: /clearlag
+  boost:
+    description: Boost the server (same as /clearlag)
+    usage: /boost
+  lag:
+    description: Show TPS, MSPT, memory and ping
+    usage: /lag
+    aliases: [tps]
+  ping:
+    description: Show your ping in ms
+    usage: /ping [player]
+  register:
+    description: Create your account
+    usage: /register <password> <password>
+  login:
+    description: Log in
+    usage: /login <password>
+  changepassword:
+    description: Change your password
+    usage: /changepassword <old> <new>
+  authreset:
+    description: Reset a player's password
+    usage: /authreset <player>
+  sethome:
+    description: Save a home where you stand
+    usage: /sethome [name]
+  home:
+    description: Teleport to a home
+    usage: /home [name]
+  delhome:
+    description: Delete a home
+    usage: /delhome <name>
+  homes:
+    description: List your homes
+    usage: /homes
+  announcement:
+    description: "Send an announcement to everybody (owner can use /announcement edit)"
+    usage: /announcement <text> | edit | add <text> | list | remove <n>
+    aliases: [announce]
+  mems:
+    description: Edit the memes (titles + sounds)
+    usage: /mems | /mems edit | /mems test <meme>
 permissions:
+  darloo.home.set:
+    default: true
+  darloo.home.delete:
+    default: true
+  darloo.homes.unlimited:
+    default: op
+  darloo.announce:
+    default: op
+  darloo.edit:
+    default: op
+  darloo.admin:
+    default: op
+  darloo.police:
+    default: op
   ultimate.owner:
     default: op
   ultimate.area.admin:

@@ -5,5 +5,46 @@ claims:
 
 arena:
   default-kit: sword
+  default-arena: ""            # arena used by kits that have no arena of their own (empty = first arena)
+  build-kits: [crystal]        # these kits may place blocks / crystals (only their own blocks can be broken)
   # commands players may use while inside the arena
   allowed-commands: [arena, kit, msg, tell, r, w]
+
+jail:
+  damage-interval-seconds: 2   # punished players lose health this often...
+  damage-hearts: 1             # ...this many hearts
+  allowed-commands: [msg, tell, r, w]
+
+welcome:
+  title: "&6&lWELCOME TO DARLOOMC"
+  subtitle: "&7Have fun, &e%player%&7!"
+  returning-message: "&7Welcome back to &6DarlooMC&7, &e%player%&7!"
+
+tpa:
+  delay-seconds: 3             # countdown before the teleport (cancelled if the player moves)
+  expire-seconds: 60           # a request runs out after this long
+
+lag:
+  auto-clear-minutes: 10       # clears dropped items + extra mobs every N minutes (0 = off)
+  max-mobs-per-chunk: 50       # more mobs than this in one chunk are removed when clearing
+  boost-below-tps: 17.0        # automatic cleanup when TPS stays below this (0 = off)
+
+kits:
+  give-kits: [starter]         # kits anyone can claim with /kit <name> outside the arena (not arena modes)
+
+starter:
+  cooldown-hours: -1           # -1 = once per player, 0 = unlimited, N = again after N hours
+
+auth:
+  enabled: true                # login security: /register and /login
+  min-password-length: 6
+  timeout-seconds: 60          # kicked if not logged in after this long (0 = never)
+  max-attempts: 5              # kicked after this many wrong passwords
+
+edit:
+  max-blocks: 200000           # biggest //set, //replace, ... allowed
+  blocks-per-tick: 20000       # how many blocks are changed per tick (keeps the server smooth)
+
+homes:
+  default-limit: 4             # homes per player (permission darloo.homes.<number> gives more)
+  delay-seconds: 3             # countdown before /home teleports (cancelled if the player moves)
